@@ -1,0 +1,7 @@
+node_modules/
+dist/
+public/videos/*
+
+# misc
+.DS_Store
+.env
