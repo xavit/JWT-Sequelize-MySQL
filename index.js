@@ -119,7 +119,7 @@ app.post('/login', async function(req, res, next) {
       // from now on we’ll identify the user by the id and the id is
       // the only personalized value that goes into our token
       let payload = { id: user.id };
-      let token = jwt.sign(payload, jwtOptions.secretOrKey);
+      let token = jwt.sign(payload, jwtOptions.secretOrKey, { expiresIn: '4h' });
       res.json({ msg: 'ok', token: token });
     } else {
       res.status(401).json({ msg: 'Password is incorrect' });
